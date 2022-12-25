@@ -20,6 +20,27 @@ public class QuickSort {
         quicksort(input, pivotIndex + 1, end);
     }
 
+    public static int partition(int[] input, int start, int end) {
+        int pivot = input[end];
+        int i = start - 1;
+
+        for (int j = start; j < end; j++) {
+            if (input[j] <= pivot) {
+                i++;
+
+                int temp = input[i];
+                input[i] = input[j];
+                input[j] = temp;
+            }
+        }
+
+        int temp = input[i + 1];
+        input[i + 1] = input[end];
+        input[end] = temp;
+
+        return i + 1;
+    }
+
     public static int findPivotIndex(int[] input, int start, int end) {
         int i = start;
         int j = end;
