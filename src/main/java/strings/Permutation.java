@@ -26,8 +26,8 @@ public class Permutation {
 
     public static List<String> findPermutations(String source, String target) {
         List<String> result = new ArrayList<>();
-        for (int i = 0; i <= target.length() - 4; i++) {
-            String temp = target.substring(i, i + 4);
+        for (int i = 0; i <= target.length() - source.length(); i++) {
+            String temp = target.substring(i, i + source.length());
             if (isPermutation(source, temp)) {
                 result.add(temp);
             }
@@ -65,7 +65,7 @@ public class Permutation {
     }
 
     public static void main(String[] args) {
-        String source = "abbc";
+        String source = "abbcb";
         String target = "cbabadcbbabbcbabaabccbabc";
         String perm = "ABC";
         Set<String> permutations = findAllPermutations(perm);
