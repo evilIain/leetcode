@@ -6,18 +6,16 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int[] array = {-10,70,-3,-8,40,30};
-        quicksort(array, 0, array.length);
+        quicksort(array, 0, array.length - 1);
         System.out.println(Arrays.toString(array));
     }
 
     public static void quicksort(int[] input, int start, int end) {
-
-        if (end - start < 2)
-            return;
-
-        int pivotIndex = findPivotIndex(input, start, end);
-        quicksort(input, start, pivotIndex);
-        quicksort(input, pivotIndex + 1, end);
+        if (start < end) {
+            int pivotIndex = partition(input, start, end);
+            quicksort(input, start, pivotIndex - 1);
+            quicksort(input, pivotIndex + 1, end);
+        }
     }
 
     public static int partition(int[] input, int start, int end) {

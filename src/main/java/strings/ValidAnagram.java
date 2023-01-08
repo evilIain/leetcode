@@ -24,7 +24,7 @@ public class ValidAnagram {
     }
 
     public static void main(String[] args) {
-        String s = "a";
+        String s = "ba";
         String t = "ab";
         System.out.println(isAnagram(s, t));
     }
