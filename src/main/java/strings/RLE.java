@@ -1,5 +1,7 @@
 package strings;
 
+import java.util.stream.Stream;
+
 public class RLE {
 
     public static String pack(char s, int count) {
